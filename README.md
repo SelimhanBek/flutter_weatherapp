@@ -9,6 +9,15 @@ Firstly load packages;
      flutter pub get
 
 ## Debug on emulators
+IOS emulators can not detect location from services. For testing; 
+     - open `lib>layout` folder,
+     - select `layout_mobile.dart`,
+     - Line 106;
+          from:
+          `await _getLocation()`
+          to:
+          `//await _getLocation()`
+          
 For emulator debug;
 
      flutter run
@@ -16,7 +25,7 @@ For emulator debug;
 Then select Emulator.
 
 
-## Debug on emulators
+## Debug on real device
 For real device test. Connect with your phone. If android don't forget open developer mode.
 
      flutter run --profile
