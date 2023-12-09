@@ -1,6 +1,6 @@
 # Flutter Weatherapp
 
-A new Flutter project.
+https://github.com/SelimhanBek/flutter_weatherapp/blob/main/screenshots/simulator_screenshot_8E93D581-25BA-40FE-A0A8-3D4AFF8318F9.png?raw=true
 
 ## Getting Started
 
