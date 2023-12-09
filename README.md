@@ -5,7 +5,7 @@ A new Flutter project.
 ## Getting Started
 
 Firstly load packages;
-        flutter pub get
+     flutter pub get
 
 ## Debug on emulators
 For emulator debug;
