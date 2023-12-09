@@ -103,7 +103,7 @@ class WebScreenLayoutState extends ConsumerState<WebScreenLayout>
   /* Get Api Call */
   _callApi() async {
     /* Update Location */
-    await _getLocation();
+    //await _getLocation();
 
     /* Get Current Report */
     Map<String, dynamic> api = await WeatherMethods().getWeather(
