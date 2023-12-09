@@ -22,7 +22,7 @@ class ResponsiveLayoutState extends ConsumerState<ResponsiveLayout> {
     await ref.read(locationProvider.notifier).checkLocationService();
 
     /* Is night ? */
-    if (AppGlobal.isNight()) {
+    if (AppGlobal.isNight(DateTime.now().hour)) {
       ref.read(themeProvider.notifier).changeAppTheme(mode: ThemeMode.dark);
     } else {
       ref.read(themeProvider.notifier).changeAppTheme(mode: ThemeMode.light);

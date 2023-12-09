@@ -1,9 +1,7 @@
 /// Common Functions
 class AppGlobal {
   /// Detect Night or Day Light
-  static bool isNight() {
-    int hour = DateTime.now().hour;
-
+  static bool isNight(int hour) {
     switch (hour) {
       case > 17:
         return true;

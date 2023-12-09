@@ -28,7 +28,7 @@ class MobileScreenLayoutState extends ConsumerState<MobileScreenLayout>
   /* Local Variables */
   final int _time = 1500;
   late double imgSize = 200;
-  late bool _isNight = AppGlobal.isNight();
+  late bool _isNight = AppGlobal.isNight(DateTime.now().hour);
   late Map<String, dynamic> _report;
   late List<Map<String, dynamic>> _hourly = [];
 
@@ -103,7 +103,7 @@ class MobileScreenLayoutState extends ConsumerState<MobileScreenLayout>
   /* Get Api Call */
   _callApi() async {
     /* Update Location */
-    await _getLocation();
+    //await _getLocation();
 
     /* Get Current Report */
     Map<String, dynamic> api = await WeatherMethods().getWeather(
@@ -240,7 +240,7 @@ class MobileScreenLayoutState extends ConsumerState<MobileScreenLayout>
                 child: Image.asset(
                   _getImage(
                     _hourly[index]['type'].toString().toLowerCase(),
-                    _isNight,
+                    AppGlobal.isNight(int.parse(_hourly[index]['hour'])),
                   ),
                 ),
               ),
@@ -445,12 +445,16 @@ class MobileScreenLayoutState extends ConsumerState<MobileScreenLayout>
             )
           : null,
       body: SafeArea(
-        child: SizedBox.expand(
-          child: weather.isEmpty
-              ? beforeLoad()
-              : SingleChildScrollView(
-                  child: report(),
-                ),
+        child: RefreshIndicator(
+          onRefresh: () async => _callApi(),
+          child: SizedBox.expand(
+            child: weather.isEmpty
+                ? beforeLoad()
+                : SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    child: report(),
+                  ),
+          ),
         ),
       ),
     );

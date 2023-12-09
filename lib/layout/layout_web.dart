@@ -28,7 +28,7 @@ class WebScreenLayoutState extends ConsumerState<WebScreenLayout>
   /* Local Variables */
   final int _time = 1500;
   late double imgSize = 200;
-  late bool _isNight = AppGlobal.isNight();
+  late bool _isNight = AppGlobal.isNight(DateTime.now().hour);
   late Map<String, dynamic> _report;
   late List<Map<String, dynamic>> _hourly = [];
 
@@ -240,7 +240,7 @@ class WebScreenLayoutState extends ConsumerState<WebScreenLayout>
                 child: Image.asset(
                   _getImage(
                     _hourly[index]['type'].toString().toLowerCase(),
-                    _isNight,
+                    AppGlobal.isNight(int.parse(_hourly[index]['hour'])),
                   ),
                 ),
               ),
@@ -450,8 +450,11 @@ class WebScreenLayoutState extends ConsumerState<WebScreenLayout>
           child: SizedBox.expand(
             child: weather.isEmpty
                 ? beforeLoad()
-                : SingleChildScrollView(
-                    child: report(),
+                : RefreshIndicator(
+                    onRefresh: () async => _callApi(),
+                    child: SingleChildScrollView(
+                      child: report(),
+                    ),
                   ),
           ),
         ),
