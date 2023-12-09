@@ -1,10 +1,7 @@
 # Flutter Weatherapp
 
-![image](https://github.com/SelimhanBek/flutter_weatherapp/blob/main/screenshots/simulator_screenshot_8E93D581-25BA-40FE-A0A8-3D4AFF8318F9.png?raw=true | width=200)
-
-![image](https://github.com/SelimhanBek/flutter_weatherapp/blob/main/screenshots/simulator_screenshot_B963C9BA-661D-4E26-86D7-FA7D9A1179EC.png?raw=true =250x500)
-
 <img src='./screenshots/img1.png' width='250'>
+<img src='./screenshots/img2.png' width='250'>
 
 ## Getting Started
 
