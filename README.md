@@ -13,10 +13,15 @@ IOS emulators can not detect location from services. For testing;
 
      - open `lib>layout` folder,
      - select `layout_mobile.dart`,
-     - Line 106;
+     
+Line 106;
+
           from:
+          
           `await _getLocation()`
+          
           to:
+          
           `//await _getLocation()`
           
 For emulator debug;
