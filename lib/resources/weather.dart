@@ -5,7 +5,7 @@ class WeatherMethods {
   static String get baseURL => "https://api.openweathermap.org/data/3.0";
 
   /* API Key */
-  static String get apiKey => "d3941861af6634a152ac6fc020cd151c";
+  static String get apiKey => "";
 
   /* Excludes */
   static String get excludeCurrent => "current";
